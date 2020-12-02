@@ -1,14 +1,12 @@
 import './App.css';
 import Search from "./components/Search";
-import GetPharmacyDetails from './components/GetPharmacyDetails';
-import GetPharmacyData from './components/GetPharmacyData';
+//import PharmacyDetails from './components/PharmacyDetails';
+//import PharmacyData from './components/PharmacyData';
 
 function App(props) {
   return(
     <div>
       <Search/>
-      <GetPharmacyDetails/>
-      <GetPharmacyData/>
     </div>
   )
 };

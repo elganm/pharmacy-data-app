@@ -1,5 +1,5 @@
-﻿const data = {
-    "Contractor Addresses": [
+﻿var data= {
+    "Contractor Addresses":[
         {
             "Contractor ID": "Bahati 19 Ltd",
             "Account Number": "601002A",
@@ -18,8 +18,7 @@
             "Post Town": "Cwmbran",
             "Post Code": "NP44 1DZ"
         }
-        
-            ]
+        ]
 }
 
 export default data
