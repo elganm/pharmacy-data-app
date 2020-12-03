@@ -17,22 +17,33 @@ class Search extends React.Component {
     }
 
     handleClick() {
-        let typedPostcode = document.getElementById("input_id").value;
-        //filter contractor addresses with postcode that user will search for
-        const dataItemCheck = data["Contractor Addresses"].filter((item) => (item["Post Code"] === typedPostcode));
+        let typedInPostcode = document.getElementById("input_id").value;
+        //find the contractor address that matched with the postcode that user searched for
+        const searchForPharm = data["Contractor Addresses"].filter(item => (item["Post Code"] === typedInPostcode));
         //get details of the pharmacy the user searched for
-        const dataItemName = dataItemCheck.map(item => item["Trading Name"]);
-        const dataItemStreet = dataItemCheck.map(item => item["Street"]);
-        const dataItemArea = dataItemCheck.map(item => item["Area"]);
-        const dataItemTown = dataItemCheck.map(item => item["Post Town"]);
-        const dataItemPostcode = dataItemCheck.map(item => item["Post Code"]);
+        const nameOfPharm = searchForPharm.map(item => item["Trading Name"]);
+        const streetOfPharm = searchForPharm.map(item => item["Street"]);
+        const areaOfPharm = searchForPharm.map(item => item["Area"]);
+        const townOfPharm = searchForPharm.map(item => item["Post Town"]);
+        const postcodeOfPharm = searchForPharm.map(item => item["Post Code"]);
+        //get contractor number id so we can see how many items a month the pharmacy has done
+        //get data of the pharmacy the user searched for
+        let contractorNumIdArray = searchForPharm.map(item => item["Account Number"])
+        let contractorNumIdString = contractorNumIdArray.join()
+        const pharmacyDataObject = data["Pharmacy items by Practice"].filter(item => (item["Contractor"] === contractorNumIdString))
+        const arrayOfPharmItems = pharmacyDataObject.map(item => parseInt(item["Total Items"]))
+        const searchedPharmTotalNumItems = arrayOfPharmItems.reduce((a, b) => a + b, 0)
+
         this.setState(
             {
-                pharmacyName: dataItemName,
-                pharmacyStreet: dataItemStreet,
-                pharmacyArea: dataItemArea,
-                pharmacyTown: dataItemTown,
-                pharmacyPostcode: dataItemPostcode
+                pharmacyName: nameOfPharm,
+                pharmacyStreet: streetOfPharm,
+                pharmacyArea: areaOfPharm,
+                pharmacyTown: townOfPharm,
+                pharmacyPostcode: postcodeOfPharm,
+                percentageMoreOrLess:"",
+                textMoreOrLess:"",
+                searchPharmNumItemsPerMonth: searchedPharmTotalNumItems
             })
       }
 
@@ -58,7 +69,7 @@ class Search extends React.Component {
                     percentageMoreOrLess=""
                     textMoreOrLess=""
                     pharmacyName={this.state.pharmacyName}
-                    searchPharmNumItemsPerMonth=""
+                    searchPharmNumItemsPerMonth={this.state.searchPharmNumItemsPerMonth}
                 />
             </div>
               )
