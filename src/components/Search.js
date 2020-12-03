@@ -54,7 +54,12 @@ class Search extends React.Component {
                     pharmacyTown={this.state.pharmacyTown}
                     pharmacyPostcode={this.state.pharmacyPostcode}
                     />
-                <PharmacyData/>
+                <PharmacyData
+                    percentageMoreOrLess=""
+                    textMoreOrLess=""
+                    pharmacyName={this.state.pharmacyName}
+                    searchPharmNumItemsPerMonth=""
+                />
             </div>
               )
     }
