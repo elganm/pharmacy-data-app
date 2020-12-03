@@ -1,8 +1,7 @@
 import React from "react";
 import data from './data';
 import PharmacyDetails from "./PharmacyDetails";
-//import PharmacyDetails from './components/PharmacyDetails';
-//import PharmacyData from './components/PharmacyData';
+import PharmacyData from './PharmacyData';
 
 class Search extends React.Component {
     constructor(){
@@ -55,6 +54,7 @@ class Search extends React.Component {
                     pharmacyTown={this.state.pharmacyTown}
                     pharmacyPostcode={this.state.pharmacyPostcode}
                     />
+                <PharmacyData/>
             </div>
               )
     }

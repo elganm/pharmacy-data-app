@@ -1,9 +1,13 @@
-/*import React from "react" ;
+import React from "react" ;
 
-function PharmacyData(){
+function PharmacyData(props){
     return(
-        <h1>This will include how many items per month a pharmacy does and what this compares to other pharmacies (i.e. "this pharmacy does x% more items than others" or "this is the #X busiest pharmacy in wales")</h1>
+        <div>
+            <h1>This pharmacy does (percentage)% (more/less) items per month than the average Welsh pharmacy.</h1>
+            <h2>(searched for pharmacy) number of items: (number of items per month)</h2>
+            <h2>Average Welsh pharmacy number of items: (variable that contains the amount of items the average welsh pharmacy does per month)</h2>
+        </div>
     )
 }
 
-export default PharmacyData;*/
+export default PharmacyData;
