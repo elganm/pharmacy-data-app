@@ -20,7 +20,7 @@ class Search extends React.Component {
         let typedPostcode = document.getElementById("input_id").value;
         //filter contractor addresses with postcode that user will search for
         const dataItemCheck = data["Contractor Addresses"].filter((item) => (item["Post Code"] === typedPostcode));
-        //get trading name for the pharmacy the user searched for
+        //get details of the pharmacy the user searched for
         const dataItemName = dataItemCheck.map(item => item["Trading Name"]);
         const dataItemStreet = dataItemCheck.map(item => item["Street"]);
         const dataItemArea = dataItemCheck.map(item => item["Area"]);

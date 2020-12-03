@@ -18,7 +18,244 @@
             "Post Town": "Cwmbran",
             "Post Code": "NP44 1DZ"
         }
-        ]
+        ],
+        "Pharmacy items by Practice": [
+            {
+                "id": "1",
+                "Contractor": "601002A",
+                "Practice Id": "601001",
+                "PSU Practice Code": "W93001",
+                "Total Items": "2",
+                "undefined": "2"
+            },
+            {
+                "id": "2",
+                "Contractor": "601002A",
+                "Practice Id": "601007",
+                "PSU Practice Code": "W93011",
+                "Total Items": "37",
+                "undefined": "39"
+            },
+            {
+                "id": "3",
+                "Contractor": "601002A",
+                "Practice Id": "601008",
+                "PSU Practice Code": "W93012",
+                "Total Items": "40",
+                "undefined": "79"
+            },
+            {
+                "id": "4",
+                "Contractor": "601002A",
+                "Practice Id": "601010",
+                "PSU Practice Code": "W93014",
+                "Total Items": "1",
+                "undefined": "80"
+            },
+            {
+                "id": "5",
+                "Contractor": "601002A",
+                "Practice Id": "601039",
+                "PSU Practice Code": "W93045",
+                "Total Items": "1",
+                "undefined": "81"
+            },
+            {
+                "id": "6",
+                "Contractor": "601002A",
+                "Practice Id": "601056",
+                "PSU Practice Code": "W93064",
+                "Total Items": "3236",
+                "undefined": "3317"
+            },
+            {
+                "id": "7",
+                "Contractor": "601002A",
+                "Practice Id": "601071",
+                "PSU Practice Code": "W93614",
+                "Total Items": "8",
+                "undefined": "3325"
+            },
+            {
+                "id": "8",
+                "Contractor": "601002A",
+                "Practice Id": "601099",
+                "PSU Practice Code": "W95065",
+                "Total Items": "3",
+                "undefined": "3328"
+            },
+            {
+                "id": "9",
+                "Contractor": "601002A",
+                "Practice Id": "601137",
+                "PSU Practice Code": "W00021",
+                "Total Items": "2",
+                "undefined": "3330"
+            },
+            {
+                "id": "10",
+                "Contractor": "601002A",
+                "Practice Id": "601148",
+                "PSU Practice Code": "W00109",
+                "Total Items": "3",
+                "undefined": "3333"
+            },
+            {
+                "id": "11",
+                "Contractor": "601002A",
+                "Practice Id": "602241",
+                "PSU Practice Code": "W97032",
+                "Total Items": "2",
+                "undefined": "3335"
+            },
+            {
+                "id": "12",
+                "Contractor": "601002A",
+                "Practice Id": "603352",
+                "PSU Practice Code": "W96003",
+                "Total Items": "325",
+                "undefined": "3660"
+            },
+            {
+                "id": "13",
+                "Contractor": "601002A",
+                "Practice Id": "Dental Prescribing",
+                "Total Items": "21",
+                "undefined": "3681"
+            },
+            {
+                "id": "14",
+                "Contractor": "601002A",
+                "Practice Id": "Hospital Prescribing",
+                "Total Items": "26",
+                "undefined": "3707"
+            },
+            {
+                "id": "15",
+                "Contractor": "601002A",
+                "Practice Id": "Welsh Unidentified",
+                "Total Items": "2",
+                "undefined": "3709"
+            },
+            {
+                "id": "1",
+                "Contractor": "601009B",
+                "Practice Id": "601003",
+                "PSU Practice Code": "W93007",
+                "Total Items": "2",
+                "undefined": "2"
+            },
+            {
+                "id": "2",
+                "Contractor": "601009B",
+                "Practice Id": "601013",
+                "PSU Practice Code": "W93018",
+                "Total Items": "2",
+                "undefined": "4"
+            },
+            {
+                "id": "3",
+                "Contractor": "601009B",
+                "Practice Id": "601019",
+                "PSU Practice Code": "W93024",
+                "Total Items": "505",
+                "undefined": "509"
+            },
+            {
+                "id": "4",
+                "Contractor": "601009B",
+                "Practice Id": "601020",
+                "PSU Practice Code": "W93025",
+                "Total Items": "134",
+                "undefined": "643"
+            },
+            {
+                "id": "5",
+                "Contractor": "601009B",
+                "Practice Id": "601021",
+                "PSU Practice Code": "W93026",
+                "Total Items": "3356",
+                "undefined": "3999"
+            },
+            {
+                "id": "6",
+                "Contractor": "601009B",
+                "Practice Id": "601022",
+                "PSU Practice Code": "W93027",
+                "Total Items": "1092",
+                "undefined": "5091"
+            },
+            {
+                "id": "7",
+                "Contractor": "601009B",
+                "Practice Id": "601023",
+                "PSU Practice Code": "W93028",
+                "Total Items": "5149",
+                "undefined": "10240"
+            },
+            {
+                "id": "8",
+                "Contractor": "601009B",
+                "Practice Id": "601024",
+                "PSU Practice Code": "W93029",
+                "Total Items": "300",
+                "undefined": "10540"
+            },
+            {
+                "id": "9",
+                "Contractor": "601009B",
+                "Practice Id": "601026",
+                "PSU Practice Code": "W93031",
+                "Total Items": "299",
+                "undefined": "10839"
+            },
+            {
+                "id": "10",
+                "Contractor": "601009B",
+                "Practice Id": "601049",
+                "PSU Practice Code": "W93055",
+                "Total Items": "315",
+                "undefined": "11154"
+            },
+            {
+                "id": "11",
+                "Contractor": "601009B",
+                "Practice Id": "601050",
+                "PSU Practice Code": "W93056",
+                "Total Items": "12",
+                "undefined": "11166"
+            },
+            {
+                "id": "12",
+                "Contractor": "601009B",
+                "Practice Id": "601051",
+                "PSU Practice Code": "W93057",
+                "Total Items": "3",
+                "undefined": "11169"
+            },
+            {
+                "id": "13",
+                "Contractor": "601009B",
+                "Practice Id": "601052",
+                "PSU Practice Code": "W93058",
+                "Total Items": "216",
+                "undefined": "11385"
+            },
+            {
+                "id": "14",
+                "Contractor": "601009B",
+                "Practice Id": "601137",
+                "PSU Practice Code": "W00021",
+                "Total Items": "1",
+                "undefined": "11386"
+            },
+            {
+                "id": "15",
+                "Contractor": "601009B",
+                "Practice Id": "Dental Prescribing",
+                "Total Items": "22",
+                "undefined": "11408"
+            }]
 }
 
 export default data
@@ -5998,7 +6235,7 @@ export default data
             "Post Code": "SA5 4BA"
         }
     ],
-    "Pharmacy by Practice Sept 2020": [
+    "Pharmacy items by Practice": [
         {
             "id": "1",
             "Contractor": "601002A",
