@@ -10,7 +10,7 @@ function PharmacyData(props){
 
     return(
         <div>
-            <h1>This pharmacy dispenses {props.percentageMoreOrLess}% (more/less:{props.textMoreOrLess}) items per month than the average Welsh pharmacy.</h1>
+            <h1>This pharmacy dispenses {props.percentageMoreOrLess}% {props.textMoreOrLess} items per month than the average Welsh pharmacy.</h1>
             <h2>{props.pharmacyName} dispenses {props.searchPharmNumItemsPerMonth} items per month</h2>
             <h2>The average Welsh pharmacy dispenses {avgWelshPharmItems} items per month</h2>
         </div>

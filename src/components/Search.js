@@ -1,7 +1,7 @@
 import React from "react";
 import data from './data';
 import PharmacyDetails from "./PharmacyDetails";
-import PharmacyData, {avgWelshPharmItems} from './PharmacyData';
+import PharmacyData from './PharmacyData';
 
 class Search extends React.Component {
     constructor(){
@@ -37,13 +37,11 @@ class Search extends React.Component {
         const arrayOfPharmItems = pharmacyDataObject.map(item => parseInt(item["Total Items"]))
         const searchedPharmTotalNumItems = arrayOfPharmItems.reduce((a, b) => a + b, 0)
 
-        console.log(searchedPharmTotalNumItems)
-
         //get searched pharmacy percentage more or less items compared to avg welsh pharmacy
         //((searched for pharmacy items - avg welsh pharm items)/avg welsh pharm items)*100
-        const percentageEquation = Math.abs(parseInt(((/*searchedPharmTotalNumItems*/5000 - 7000)/7000)*100));
-        
-        console.log(percentageEquation)
+        const itemDifferenceBetweenPharms = searchedPharmTotalNumItems-7000;
+        const percentageEquation = Math.abs(parseInt((itemDifferenceBetweenPharms/7000)*100));
+        const moreOrLessModifier = itemDifferenceBetweenPharms >0 ? "more":"less";
 
         this.setState(
             {
@@ -53,7 +51,7 @@ class Search extends React.Component {
                 pharmacyTown: townOfPharm,
                 pharmacyPostcode: postcodeOfPharm,
                 percentageMoreOrLess: percentageEquation,
-                textMoreOrLess:"",
+                textMoreOrLess:moreOrLessModifier,
                 searchPharmNumItemsPerMonth: searchedPharmTotalNumItems
             })
       }
@@ -78,7 +76,7 @@ class Search extends React.Component {
                     />
                 <PharmacyData
                     percentageMoreOrLess={this.state.percentageMoreOrLess}
-                    textMoreOrLess=""
+                    textMoreOrLess={this.state.textMoreOrLess}
                     pharmacyName={this.state.pharmacyName}
                     searchPharmNumItemsPerMonth={this.state.searchPharmNumItemsPerMonth}
                 />
