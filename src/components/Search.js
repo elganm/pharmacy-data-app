@@ -7,12 +7,13 @@ class Search extends React.Component {
     constructor(){
         super()
         this.state = {
+            userSearched:false,
             pharmacyName: "",
             pharmacyStreet:"",
             pharmacyArea:"",
             pharmacyTown:"",
             pharmacyPostcode:"",
-            percentageMoreOrLess: "",
+            percentageMoreOrLess:"",
             textMoreOrLess:"",
             searchPharmNumItemsPerMonth: ""
         }
@@ -45,6 +46,7 @@ class Search extends React.Component {
 
         this.setState(
             {
+                userSearched: true,
                 pharmacyName: nameOfPharm,
                 pharmacyStreet: streetOfPharm,
                 pharmacyArea: areaOfPharm,
@@ -58,55 +60,32 @@ class Search extends React.Component {
 
     render(){
         return (
-            <div>
-                <h1>Lorem ipsum</h1>
-                <h2>Lorem ipsum</h2>
-                <div className="search-container">
-                    <div className = "search-form">
-                        <input id="input_id" type="text" className="search-bar" name="postcode" placeholder="Search by pharmacy postcode"/>
-                        <button onClick={this.handleClick}>X</button>
+                <div>
+                    <h1>Lorem ipsum</h1>
+                    <h2>Lorem ipsum</h2>
+                    <div className="search-container">
+                        <div className = "search-form">
+                            <input id="input_id" type="text" className="search-bar" name="postcode" placeholder="Search by pharmacy postcode"/>
+                            <button onClick={this.handleClick}>X</button>
+                        </div>
                     </div>
-                </div>
-                <PharmacyDetails
-                    pharmacyName={this.state.pharmacyName} 
-                    pharmacyStreet={this.state.pharmacyStreet}
-                    pharmacyArea={this.state.pharmacyArea}
-                    pharmacyTown={this.state.pharmacyTown}
-                    pharmacyPostcode={this.state.pharmacyPostcode}
+                    <PharmacyDetails
+                        userSearched = {this.state.userSearched}
+                        pharmacyName={this.state.pharmacyName} 
+                        pharmacyStreet={this.state.pharmacyStreet}
+                        pharmacyArea={this.state.pharmacyArea}
+                        pharmacyTown={this.state.pharmacyTown}
+                        pharmacyPostcode={this.state.pharmacyPostcode}
+                        />
+                    <PharmacyData
+                        userSearched = {this.state.userSearched}
+                        percentageMoreOrLess={this.state.percentageMoreOrLess}
+                        textMoreOrLess={this.state.textMoreOrLess}
+                        pharmacyName={this.state.pharmacyName}
+                        searchPharmNumItemsPerMonth={this.state.searchPharmNumItemsPerMonth}
                     />
-                <PharmacyData
-                    percentageMoreOrLess={this.state.percentageMoreOrLess}
-                    textMoreOrLess={this.state.textMoreOrLess}
-                    pharmacyName={this.state.pharmacyName}
-                    searchPharmNumItemsPerMonth={this.state.searchPharmNumItemsPerMonth}
-                />
-            </div>
+                </div>
               )
-    }
 }
-
-/*
-function Search (){
-
-   function getPostcode(){
-        let typedPostcode = document.getElementById("input_id").value;
-          console.log(typedPostcode)
-      };
-
-      return (
-        <div>
-            <h1>Lorem ipsum</h1>
-            <h2>Lorem ipsum</h2>
-            <div className="search-container">
-                <form className = "search-form">
-                    <input id="input_id" type="search" className="search-bar" name="postcode" placeholder="Search by pharmacy postcode"/>
-                    <button onClick= {getPostcode} />
-                </form>
-            </div>
-        </div>
-          )
-    };
-
-*/
-
+}
 export default Search;

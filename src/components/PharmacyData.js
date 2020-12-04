@@ -8,6 +8,7 @@ function PharmacyData(props){
         const numWelshPharms = 2 //actual number = 716
         const avgWelshPharmItems = parseInt(sumOfTotalItems/numWelshPharms)
 
+    if(props.userSearched){
     return(
         <div>
             <h1>This pharmacy dispenses {props.percentageMoreOrLess}% {props.textMoreOrLess} items per month than the average Welsh pharmacy.</h1>
@@ -15,6 +16,10 @@ function PharmacyData(props){
             <h2>The average Welsh pharmacy dispenses {avgWelshPharmItems} items per month</h2>
         </div>
     )
+}
+    else{
+        return null
+    }
 }
 
 export default PharmacyData;
