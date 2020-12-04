@@ -1,7 +1,7 @@
 import React from "react";
 import data from './data';
 import PharmacyDetails from "./PharmacyDetails";
-import PharmacyData from './PharmacyData';
+import PharmacyData, {avgWelshPharmItems} from './PharmacyData';
 
 class Search extends React.Component {
     constructor(){
@@ -11,7 +11,10 @@ class Search extends React.Component {
             pharmacyStreet:"",
             pharmacyArea:"",
             pharmacyTown:"",
-            pharmacyPostcode:""
+            pharmacyPostcode:"",
+            percentageMoreOrLess: "",
+            textMoreOrLess:"",
+            searchPharmNumItemsPerMonth: ""
         }
         this.handleClick = this.handleClick.bind(this)
     }
@@ -28,11 +31,19 @@ class Search extends React.Component {
         const postcodeOfPharm = searchForPharm.map(item => item["Post Code"]);
         //get contractor number id so we can see how many items a month the pharmacy has done
         //get data of the pharmacy the user searched for
-        let contractorNumIdArray = searchForPharm.map(item => item["Account Number"])
-        let contractorNumIdString = contractorNumIdArray.join()
+        const contractorNumIdArray = searchForPharm.map(item => item["Account Number"])
+        const contractorNumIdString = contractorNumIdArray.join()
         const pharmacyDataObject = data["Pharmacy items by Practice"].filter(item => (item["Contractor"] === contractorNumIdString))
         const arrayOfPharmItems = pharmacyDataObject.map(item => parseInt(item["Total Items"]))
         const searchedPharmTotalNumItems = arrayOfPharmItems.reduce((a, b) => a + b, 0)
+
+        console.log(searchedPharmTotalNumItems)
+
+        //get searched pharmacy percentage more or less items compared to avg welsh pharmacy
+        //((searched for pharmacy items - avg welsh pharm items)/avg welsh pharm items)*100
+        const percentageEquation = Math.abs(parseInt(((/*searchedPharmTotalNumItems*/5000 - 7000)/7000)*100));
+        
+        console.log(percentageEquation)
 
         this.setState(
             {
@@ -41,7 +52,7 @@ class Search extends React.Component {
                 pharmacyArea: areaOfPharm,
                 pharmacyTown: townOfPharm,
                 pharmacyPostcode: postcodeOfPharm,
-                percentageMoreOrLess:"",
+                percentageMoreOrLess: percentageEquation,
                 textMoreOrLess:"",
                 searchPharmNumItemsPerMonth: searchedPharmTotalNumItems
             })
@@ -66,7 +77,7 @@ class Search extends React.Component {
                     pharmacyPostcode={this.state.pharmacyPostcode}
                     />
                 <PharmacyData
-                    percentageMoreOrLess=""
+                    percentageMoreOrLess={this.state.percentageMoreOrLess}
                     textMoreOrLess=""
                     pharmacyName={this.state.pharmacyName}
                     searchPharmNumItemsPerMonth={this.state.searchPharmNumItemsPerMonth}
