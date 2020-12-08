@@ -49,6 +49,7 @@ class Search extends React.Component {
         this.setState(
             {
                 userSearched: true,
+                errorMessage: null,
                 pharmacyName: nameOfPharm,
                 pharmacyStreet: streetOfPharm,
                 pharmacyArea: areaOfPharm,
