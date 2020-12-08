@@ -22,9 +22,15 @@ class Search extends React.Component {
     }
 
     handleClick() {
+        //get the input from search bar
         let typedInPostcode = document.getElementById("input_id").value;
+
+        //format the postcode so it can be searched for in data.js file
+        const formatPostcodeRegex = /(^[A-Z]{1,2}[0-9]{1,2})([0-9][A-Z]{2}$)/i
+        const formattedPostcode = typedInPostcode.replace(formatPostcodeRegex, "$1 $2").toUpperCase()
+
         //find the contractor address that matched with the postcode that user searched for
-        const searchForPharm = data["Contractor Addresses"].filter(item => (item["Post Code"] === typedInPostcode));
+        const searchForPharm = data["Contractor Addresses"].filter(item => (item["Post Code"] === formattedPostcode));
         
         if (searchForPharm.length > 0){
         //get details of the pharmacy the user searched for
