@@ -8,6 +8,7 @@ class Search extends React.Component {
         super()
         this.state = {
             userSearched:false,
+            errorMessage: "",
             pharmacyName: "",
             pharmacyStreet:"",
             pharmacyArea:"",
@@ -24,6 +25,8 @@ class Search extends React.Component {
         let typedInPostcode = document.getElementById("input_id").value;
         //find the contractor address that matched with the postcode that user searched for
         const searchForPharm = data["Contractor Addresses"].filter(item => (item["Post Code"] === typedInPostcode));
+        
+        if (searchForPharm.length > 0){
         //get details of the pharmacy the user searched for
         const nameOfPharm = searchForPharm.map(item => item["Trading Name"]);
         const streetOfPharm = searchForPharm.map(item => item["Street"]);
@@ -43,7 +46,6 @@ class Search extends React.Component {
         const itemDifferenceBetweenPharms = searchedPharmTotalNumItems-7000;
         const percentageEquation = Math.abs(parseInt((itemDifferenceBetweenPharms/7000)*100));
         const moreOrLessModifier = itemDifferenceBetweenPharms >0 ? "more":"less";
-
         this.setState(
             {
                 userSearched: true,
@@ -56,6 +58,12 @@ class Search extends React.Component {
                 textMoreOrLess:moreOrLessModifier,
                 searchPharmNumItemsPerMonth: searchedPharmTotalNumItems
             })
+        }
+        else{
+            this.setState({
+                errorMessage: "Sorry, we don't have a pharmacy with that postcode"
+            })
+        }
       }
 
     render(){
@@ -66,8 +74,9 @@ class Search extends React.Component {
                     <div className="search-container">
                         <div className = "search-form">
                             <input id="input_id" type="text" className="search-bar" name="postcode" placeholder="Search by pharmacy postcode"/>
-                            <button onClick={this.handleClick}>X</button>
+                            <button onClick={this.handleClick}>Search</button>
                         </div>
+                        <small>{this.state.errorMessage}</small>
                     </div>
                     <PharmacyDetails
                         userSearched = {this.state.userSearched}
