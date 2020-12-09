@@ -3,12 +3,13 @@ import data from './data';
 import PharmacyDetails from "./PharmacyDetails";
 import PharmacyData from './PharmacyData';
 import Search from "./Search";
+import Loading from "./Loading";
 
 class FetchData extends React.Component {
     constructor(){
         super()
         this.state = {
-            input:"",
+            loading:false,
             postcode:"",
             userSearched:false,
             errorMessage: "",
@@ -63,19 +64,27 @@ class FetchData extends React.Component {
         const itemDifferenceBetweenPharms = searchedPharmTotalNumItems-7000;
         const percentageEquation = Math.abs(parseInt((itemDifferenceBetweenPharms/7000)*100));
         const moreOrLessModifier = itemDifferenceBetweenPharms >0 ? "more":"less";
-        this.setState(
-            {
-                userSearched: true,
-                errorMessage: null,
-                pharmacyName: nameOfPharm,
-                pharmacyStreet: streetOfPharm,
-                pharmacyArea: areaOfPharm,
-                pharmacyTown: townOfPharm,
-                pharmacyPostcode: postcodeOfPharm,
-                percentageMoreOrLess: percentageEquation,
-                textMoreOrLess:moreOrLessModifier,
-                searchPharmNumItemsPerMonth: searchedPharmTotalNumItems
-            })
+        
+        this.setState({
+            loading: true
+        })
+
+        setTimeout(() => {
+            this.setState(
+                {
+                    loading:false,
+                    userSearched: true,
+                    errorMessage: null,
+                    pharmacyName: nameOfPharm,
+                    pharmacyStreet: streetOfPharm,
+                    pharmacyArea: areaOfPharm,
+                    pharmacyTown: townOfPharm,
+                    pharmacyPostcode: postcodeOfPharm,
+                    percentageMoreOrLess: percentageEquation,
+                    textMoreOrLess:moreOrLessModifier,
+                    searchPharmNumItemsPerMonth: searchedPharmTotalNumItems
+                })
+            }, 1500)
         }
         else{
             this.setState({
@@ -87,27 +96,34 @@ class FetchData extends React.Component {
     render(){
         return (
                 <div>   
-                    <Search
-                        postcode={this.state.postcode}
-                        handleChange={this.handleChange}
-                        handleClick = {this.handleClick}
-                        errorMessage = {this.state.errorMessage}
-                    />
-                    <PharmacyDetails
-                        userSearched = {this.state.userSearched}
-                        pharmacyName={this.state.pharmacyName} 
-                        pharmacyStreet={this.state.pharmacyStreet}
-                        pharmacyArea={this.state.pharmacyArea}
-                        pharmacyTown={this.state.pharmacyTown}
-                        pharmacyPostcode={this.state.pharmacyPostcode}
-                    />
-                    <PharmacyData
-                        userSearched = {this.state.userSearched}
-                        percentageMoreOrLess={this.state.percentageMoreOrLess}
-                        textMoreOrLess={this.state.textMoreOrLess}
-                        pharmacyName={this.state.pharmacyName}
-                        searchPharmNumItemsPerMonth={this.state.searchPharmNumItemsPerMonth}
-                    />
+                    {this.state.loading ? <Loading/> 
+                    : 
+                    <div>
+                        <Search
+                            postcode={this.state.postcode}
+                            handleChange={this.handleChange}
+                            handleClick = {this.handleClick}
+                            errorMessage = {this.state.errorMessage}
+                        /> 
+        
+                        <PharmacyDetails
+                            userSearched = {this.state.userSearched}
+                            pharmacyName={this.state.pharmacyName} 
+                            pharmacyStreet={this.state.pharmacyStreet}
+                            pharmacyArea={this.state.pharmacyArea}
+                            pharmacyTown={this.state.pharmacyTown}
+                            pharmacyPostcode={this.state.pharmacyPostcode}
+                        />
+        
+                        <PharmacyData
+                            userSearched = {this.state.userSearched}
+                            percentageMoreOrLess={this.state.percentageMoreOrLess}
+                            textMoreOrLess={this.state.textMoreOrLess}
+                            pharmacyName={this.state.pharmacyName}
+                            searchPharmNumItemsPerMonth={this.state.searchPharmNumItemsPerMonth}
+                        />
+                    </div>
+                    }
                 </div>
               )
 }

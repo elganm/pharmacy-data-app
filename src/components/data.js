@@ -261,7 +261,24 @@
 export default data
 
         
-/*,
+/*      {
+            "Contractor ID": "Bahati 19 Ltd",
+            "Account Number": "601002A",
+            "Trading Name": "Evans Pharmacy - Cwmfelinfach",
+            "Street": "52 Maindee Road",
+            "Area": "Cwmfelinfach",
+            "Post Town": "Newport",
+            "Post Code": "NP11 7HR"
+        },
+        {
+            "Contractor ID": "M Ali",
+            "Account Number": "601009B",
+            "Trading Name": "Pontnewydd Pharmacy",
+            "Street": "8 Commercial Street",
+            "Area": "Pontnewydd",
+            "Post Town": "Cwmbran",
+            "Post Code": "NP44 1DZ"
+        },
         {
             "Contractor ID": "The Handpost Ltd.",
             "Account Number": "601009C",
