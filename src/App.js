@@ -1,12 +1,12 @@
 import './App.css';
-import Search from "./components/Search";
+import FetchData from "./components/FetchData";
 //import PharmacyDetails from './components/PharmacyDetails';
 //import PharmacyData from './components/PharmacyData';
 
 function App(props) {
   return(
     <div>
-      <Search/>
+      <FetchData/>
     </div>
   )
 };
