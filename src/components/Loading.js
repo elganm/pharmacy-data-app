@@ -1,8 +1,9 @@
 import React from "react"
+import LoadingImg from "./images/loading image.gif"
 
 function Loading(){
     return(
-    <h1>Loading</h1>
+        <img src={LoadingImg} alt="loading-screen"/>
     )
 }
 

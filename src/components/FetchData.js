@@ -84,7 +84,7 @@ class FetchData extends React.Component {
                     textMoreOrLess:moreOrLessModifier,
                     searchPharmNumItemsPerMonth: searchedPharmTotalNumItems
                 })
-            }, 1500)
+            }, 2500)
         }
         else{
             this.setState({
